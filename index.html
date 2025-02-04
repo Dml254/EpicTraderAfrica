@@ -7,25 +7,33 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     @keyframes gradientBackground {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    .animate-fade-in {
-      animation: fadeIn 1s ease-out;
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
     }
 
-    .gradient-bg {
-      background: linear-gradient(135deg, rgba(13, 29, 69, 1) 0%, rgba(20, 40, 80, 1) 50%, rgba(13, 29, 69, 1) 100%);
+    body {
+      background: linear-gradient(135deg, rgba(13, 29, 69, 1), rgba(20, 40, 80, 1), rgba(13, 29, 69, 1));
       background-size: 200% 200%;
       animation: gradientBackground 10s ease infinite;
+      min-height: 100vh;
+      color: white;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .glassmorphism {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .hover-scale {
@@ -35,57 +43,57 @@
     .hover-scale:hover {
       transform: scale(1.05);
     }
+
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
   </style>
 </head>
-<body class="gradient-bg text-white font-sans">
-  <div class="min-h-screen flex flex-col justify-center items-center p-6">
-    <!-- Header Section -->
-    <div class="text-center animate-fade-in">
-      <h1 class="text-5xl font-bold mb-4">EpicTraderAfrica</h1>
-      <p class="text-xl text-gray-300 mb-8">Your ultimate trading companion powered by the Deriv API.</p>
-    </div>
-
-    <!-- Download Button -->
-    <a href="https://github.com/Dml254/EpicTraderAfrica/releases/latest/download/app-release.apk" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover-scale animate-fade-in">
+<body class="flex flex-col items-center justify-center p-6">
+  <!-- Header Section -->
+  <div class="text-center glassmorphism p-8 max-w-2xl w-full animate-float">
+    <h1 class="text-5xl font-bold mb-4">EpicTraderAfrica</h1>
+    <p class="text-xl text-gray-300 mb-8">Your ultimate trading companion powered by the Deriv API.</p>
+    <a href="https://github.com/Dml254/EpicTraderAfrica/releases/latest/download/app-release.apk" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover-scale inline-flex items-center">
       <i class="fas fa-download mr-2"></i> Download APK
     </a>
+  </div>
 
-    <!-- Features Section -->
-    <div class="mt-12 max-w-4xl w-full animate-fade-in">
-      <h2 class="text-3xl font-bold text-center mb-8">Key Features</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Feature 1 -->
-        <div class="bg-white/10 p-6 rounded-lg shadow-md hover-scale">
-          <i class="fas fa-robot text-4xl text-blue-500 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Trading Bots</h3>
-          <p class="text-gray-300">Build and deploy custom trading bots with ease.</p>
-        </div>
+  <!-- Features Section -->
+  <div class="mt-12 max-w-6xl w-full">
+    <h2 class="text-3xl font-bold text-center mb-8">Key Features</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Feature 1 -->
+      <div class="glassmorphism p-6 rounded-lg hover-scale">
+        <i class="fas fa-robot text-4xl text-blue-500 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Trading Bots</h3>
+        <p class="text-gray-300">Build and deploy custom trading bots with ease.</p>
+      </div>
 
-        <!-- Feature 2 -->
-        <div class="bg-white/10 p-6 rounded-lg shadow-md hover-scale">
-          <i class="fas fa-chart-line text-4xl text-blue-500 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Advanced Tools</h3>
-          <p class="text-gray-300">Access advanced trading strategies and tools.</p>
-        </div>
+      <!-- Feature 2 -->
+      <div class="glassmorphism p-6 rounded-lg hover-scale">
+        <i class="fas fa-chart-line text-4xl text-blue-500 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Advanced Tools</h3>
+        <p class="text-gray-300">Access advanced trading strategies and tools.</p>
+      </div>
 
-        <!-- Feature 3 -->
-        <div class="bg-white/10 p-6 rounded-lg shadow-md hover-scale">
-          <i class="fas fa-shield-alt text-4xl text-blue-500 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Secure & Reliable</h3>
-          <p class="text-gray-300">Trade with confidence using our secure platform.</p>
-        </div>
+      <!-- Feature 3 -->
+      <div class="glassmorphism p-6 rounded-lg hover-scale">
+        <i class="fas fa-shield-alt text-4xl text-blue-500 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Secure & Reliable</h3>
+        <p class="text-gray-300">Trade with confidence using our secure platform.</p>
       </div>
     </div>
-
-    <!-- Footer Section -->
-    <footer class="mt-12 text-center text-gray-400 animate-fade-in">
-      <p>© 2023 EpicTraderAfrica. All rights reserved.</p>
-      <p class="mt-2">
-        <a href="https://github.com/Dml254/EpicTraderAfrica" class="text-blue-500 hover:text-blue-400">
-          <i class="fab fa-github mr-2"></i>GitHub Repository
-        </a>
-      </p>
-    </footer>
   </div>
+
+  <!-- Footer Section -->
+  <footer class="mt-12 text-center text-gray-400">
+    <p>© 2023 EpicTraderAfrica. All rights reserved.</p>
+    <p class="mt-2">
+      <a href="https://github.com/Dml254/EpicTraderAfrica" class="text-blue-500 hover:text-blue-400">
+        <i class="fab fa-github mr-2"></i>GitHub Repository
+      </a>
+    </p>
+  </footer>
 </body>
 </html>
